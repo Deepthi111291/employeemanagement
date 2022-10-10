@@ -5,6 +5,7 @@ urlpatterns=[
     # path('index',views.index),
     # path('login',views.login),
     # path("signup",views.registration)
+    path('index',views.IndexView.as_view()),
     path('login',views.LoginView.as_view()),
     path('signup',views.RegistrationView.as_view())
 ]

@@ -18,6 +18,10 @@ from django.views.generic import View  #View is the parentclass of all views
 #     return render(request,'reg.html')
 
 #class based views
+class IndexView(View):
+    def get(self,request):                       # View is the parent class of all views
+        return render(request,'index.html')
+
 class LoginView(View):                           # if request is get method,return login.html page
     def get(self,request):                       # View is the parent class of all views
         return render(request,'login.html')
