@@ -8,7 +8,6 @@ from django.views.generic import View  #View is the parentclass of all views
 
 #function based view
 # def index(request):
-#     return render(request,"home.html")
 #
 # def login(request):
 #     print("*******************",request.method)
