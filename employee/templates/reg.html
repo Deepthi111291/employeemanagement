@@ -16,22 +16,25 @@
             <p>register here</p>
                 <form action="" method="post">
                     {% csrf_token %}            # All post  forms should have csrf token
-                    <div class="mb-3">
-                        <input type="text" placeholder="firstname" class="form-control" name="f_name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" placeholder="lastname" class="form-control" name="l_name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" placeholder="email" class="form-control" name="e_mail">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" placeholder="username" class="form-control" name="u_name">
-                    </div>
-                    <div class="mb-3">
-                        <input type="password" placeholder="password" class="form-control" name="pwd">
-                    </div>
+                    {{form}}
+<!--                    <div class="mb-3">-->
+<!--                        <input type="text" placeholder="firstname" class="form-control" name="f_name">-->
+<!--                    </div>-->
+<!--                    <div class="mb-3">-->
+<!--                        <input type="text" placeholder="lastname" class="form-control" name="l_name">-->
+<!--                    </div>-->
+<!--                    <div class="mb-3">-->
+<!--                        <input type="text" placeholder="email" class="form-control" name="e_mail">-->
+<!--                    </div>-->
+<!--                    <div class="mb-3">-->
+<!--                        <input type="text" placeholder="username" class="form-control" name="u_name">-->
+<!--                    </div>-->
+<!--                    <div class="mb-3">-->
+<!--                        <input type="password" placeholder="password" class="form-control" name="pwd">-->
+<!--                    </div>-->
+                    <div>
                     <input type="submit">
+                        </div>
                 </form>
                 </div>
         </div>

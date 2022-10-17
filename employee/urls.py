@@ -7,7 +7,6 @@ urlpatterns=[
     # path("signup",views.registration)
     path('index',views.IndexView.as_view()),
     path('login',views.LoginView.as_view()),
-    path('signup',views.RegistrationView.as_view())
+    path('signup',views.RegistrationView.as_view()),
+    path('profile/add',views.EmployeeCreateView.as_view(),name="emp-add")
 ]
-
-3
