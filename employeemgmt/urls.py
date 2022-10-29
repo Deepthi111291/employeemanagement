@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('employee/',include('employee.urls')),
-    path('calculator/',include('calculator.urls'))
-]
+    path('calculator/',include('calculator.urls')),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # to display static files
+
+#css,javascipt,image,audio,video all are given in static files

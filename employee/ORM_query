@@ -1,0 +1,54 @@
+#orm query to create
+modelname.objects.create()
+Employee.objects.create(eid="emp_105",employee_name="varun",designation="tester",salary=25400,email="varu@gmail.com",experience=3)
+integrity error comes if you have error in your orm query
+no such table error comes when you forgot to apply migrations
+
+
+#orm query for retrieving objects
+qs=modelname.objects.all()
+qs=Employee.objects.all()
+qs                        #just giving qs will print all objects(ravi,hari ,anu ...all are objects)
+
+for i in qs:
+    print(i.salary)
+for i in qs:
+    print(i.eid,i.employee_name,i.designation,i.email)
+
+#orm query to filter out
+qs=Employee.objects.filter(designation="developer")
+for emp in qs:
+    print(emp.eid,emp.employee_name,emp.salary)
+print(qs)
+print(qs.query) will give the query of dbsqlite that django converted from orm
+
+qs=Employee.objects.filter(salary__gt=24000)     (greater than 24000)
+qs=Employee.objects.filter(salary__lt=24000)     (less than 24000)
+qs=Employee.objects.filter(salary__gte=24000)    (greater than or equal to 24000)
+qs=Employee.objects.filter(salary__lte=24000)    (less than or equal to 24000)
+qs=Employee.objects.filter(designation__iexact="developer")         (iexact means case sensitive match)
+qs=Employee.objects.filter(employee_name__icontains='ar')           (icontains means that contains 'ar' in employee_name)
+
+#print all employees exclude developer
+qs=Employee.objects.all().exclude(designation="developer")
+qs
+
+#print emp details where designation="developer" and salary <24000
+qs=Employee.objects.filter(designation="developer",salary__lt=24000)
+
+#to get a specific employee
+get()
+qs=Employee.objects.get(eid="emp_100")
+qs.salary             ->(23400)
+qs.email              ->(ram@gmail.com)
+
+# in case of edit,delete,detail first we need
+ to take a specific employee using get()
+#edit the experience of emp_101
+qs=Employee.objects.get(eid="emp_101")
+qs.experience=8
+qs.save()
+
+#delete employee 103
+qs=Employee.objects.get(eid="emp_103")
+qs.delete()
